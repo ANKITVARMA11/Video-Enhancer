@@ -5,8 +5,8 @@ import cv2
 import imageio
 
 
-input_path = "media/original(720p).mp4" #Giving the input video's path
-output_path = str(input("Location of the output video:")) #The resultant video's desired path
+input_path = str(input("Path of the input video:")) #Giving the input video's path
+output_path = "media\output folder" #The resultant video's desired path
 output_video = str(input("Name of the output video:"))
 
 fps = preprocess.fps(input_path)
@@ -59,8 +59,11 @@ height, width, layers = frame.shape
 print("Generating your video!!")
 video = cv2.VideoWriter(video_name, 0, fps, (width,height))
 
-for image in images:
-    video.write(cv2.imread(os.path.join(image_folder, image)))
+# for image in images:
+#     video.write(cv2.imread(os.path.join(image_folder, image)))
+    # cv2.imwrite(os.path.join("media/denoised_frames_temp","frame%d.jpg" % path),image)
+for image in range(preprocess.frame_count(image_folder)):
+    video.write(cv2.imread(os.path.join("media/denoised_frames_temp","frame%d.jpg" % image)))
 
 
 print("Video generated and upscaled to 1280x720 and saved in {}".format(output_path))
