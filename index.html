@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Upload and Enhancement</title>
+</head>
+<body>
+    <h2>Upload a Video for Enhancement</h2>
+    <!-- Video Upload Form -->
+    <form id="videoUploadForm">
+        <!-- Video Input Field -->
+        <input type="file" id="videoInput" name="video" accept="video/*" required>
+        <!-- Submit Button -->
+        <button type="button" onclick="uploadVideo()">Upload Video</button>
+    </form>
+
+    <!-- Display Selected Video -->
+    <video id="videoPreview" width="400" controls autoplay style="display:none;" ></video>
+
+    <!-- Processed Video Output -->
+    <h2>Enhanced Video</h2>
+    <video id="outputVideo" width="400" controls autoplay style="display: none;"></video>
+    <br>
+    <!-- Download Button for Processed Video -->
+    <a id="downloadLink" style="display: none;">Download Enhanced Video</a>
+
+    <!-- Include JavaScript -->
+    <script src="app.py"></script>
+</body>
+</html>
